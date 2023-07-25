@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+  
+  /* Style the heading for saved recipes */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+  
+    .recipe {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .recipe h2 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the ingredients and instructions */
+  .recipe p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .recipe + .recipe {
+    margin-top: 20px;
+  }
+
+  /* Hide the recipe content by default */
+  .recipe-content {
+    display: none;
+  }
+  
+  /* Add a pointer cursor to show that the recipe is clickable */
+  .recipe-title {
+    cursor: pointer;
+  }
+
+/* Style the header links */
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header li {
+  margin: 0 10px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
