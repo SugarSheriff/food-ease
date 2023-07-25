@@ -45,3 +45,10 @@ $.ajax({
         console.error('Error: ', jqXHR.responseText);
     }
 });
+
+//Dropdown click functionality on saved recipes
+$(document).ready(function() {
+    $('.recipe-title').click(function() {
+      $(this).siblings('.recipe-content').slideToggle();
+    });
+  });
