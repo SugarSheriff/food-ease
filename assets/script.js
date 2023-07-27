@@ -29,6 +29,14 @@
 //     }
 // });
 
+//Dropdown click for burger//
+const burgerIcon = document.querySelector('#burger');
+const navbarMenu = document.querySelector('#nav-links');
+
+burgerIcon.addEventListener('click', () => {
+  navbarMenu.classList.toggle('is-active')
+})
+
 //Dropdown click functionality on saved recipes
 $(document).ready(function() {
     $('.recipe-title').click(function() {

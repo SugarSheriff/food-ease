@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,36 @@
     <link rel="stylesheet" href="./assets/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
+
 <body>
     <header>
-        <h1>Food-Ease</h1>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="savedrecipes.html">Saved Recipes</a></li>
-        </ul>
+        <nav class="navbar is-info">
+            <h1 class="is-size-1">Food-Ease</h1>
+            <a class="navbar-burger is-vcentered" id="burger">
+                <span></span>
+                <span></span>
+            </a>
+            <div class="navbar-menu" id="nav-links">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="savedrecipes.html">Saved Recipes</a>
+                </div>
+            </div>
+        </nav>
     </header>
-    <h1>Search for a cocktail or food recipe</h1>
-    <form action="results.html">
-        <input type="text" name="" id="" placeholder="Search">
-        <button onclick="searchForFood()">Food</button>
-        <button onclick="searchForDrink()">Drink</button>
-        <div class="image"><!--Add image source here for button--></div>
-    </form>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <section class="section is-centered">
+        <h1 class="is-size-4 has-text-weight-bold has-text-light">Search for a cocktail or food recipe</h1>
+        <form action="results.html">
+            <input class="input" type="text" name="" id="main-search" placeholder="Search">
+            <div class="buttons is-centered">
+                <button class="button is-rounded" id="search-food">Food</button>
+                <button class="button is-rounded" id="search-drink">Drink</button>
+            </div>
+        </form>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
