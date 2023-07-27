@@ -18,16 +18,32 @@
         <div class="recipe">
             <h2 class="recipe-title">Recipe 1</h2>
             <div class="recipe-content">
-                <p>Ingredients: abc</p>
-                <p>Instructions: xyz</p>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'ingredients1')">Ingredients</button>
+                    <button class="tab-button" onclick="openTab(event, 'instructions1')">Instructions</button>
+                </div>
+                <div id="ingredients1" class="tab-content">
+                    <p>Ingredients for Recipe 1: abc</p>
+                </div>
+                <div id="instructions1" class="tab-content" style="display: none;">
+                    <p>Instructions for Recipe 1: xyz</p>
+                </div>
             </div>
         </div>
         
         <div class="recipe">
             <h2 class="recipe-title">Recipe 2</h2>
             <div class="recipe-content">
-                <p>Ingredients: abc</p>
-                <p>Instructions: xyz</p>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'ingredients2')">Ingredients</button>
+                    <button class="tab-button" onclick="openTab(event, 'instructions2')">Instructions</button>
+                </div>
+                <div id="ingredients2" class="tab-content">
+                    <p>Ingredients for Recipe 2: abc</p>
+                </div>
+                <div id="instructions2" class="tab-content" style="display: none;">
+                    <p>Instructions for Recipe 2: xyz</p>
+                </div>
             </div>
         </div>
         <!--more saved recipes here-->
@@ -35,5 +51,22 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
