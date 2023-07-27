@@ -1,3 +1,7 @@
+:root {
+  --main-blue: #007bff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +29,7 @@
     margin: 20px auto;
     padding: 10px;
   }
-  
+
   Style the heading for saved recipes */
   .burger {
   display: flex;
@@ -53,7 +57,6 @@
     margin-bottom: 10px;
   }
   
-  /* Style the ingredients and instructions */
   .recipe p {
     font-size: 16px;
     line-height: 1.6;
@@ -73,7 +76,6 @@
     cursor: pointer;
   }
 
-/* Style the header links
 header ul {
   list-style: none;
   padding: 0;
@@ -82,6 +84,7 @@ header ul {
   justify-content: center;
 }
 */
+
 /*
 header li {
   margin: 0 10px;
@@ -91,4 +94,36 @@ header a {
   color: #fff;
   text-decoration: none;
 }
+
 */
+
+/*example recipe card*/
+.recipe-card {
+  position: relative;
+  left: 700px;
+  width: 600px;
+  height: 500px;
+  border: 2px solid grey;
+  border-radius: 15px;
+  font-size: 25px;
+}
+
+.card-title {
+  padding: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid grey;
+  background-color: var(--main-blue);
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+}
+
+.card-instrutions {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-ingredients {
+  padding: 20px;
+  text-align: center;
+}
+
