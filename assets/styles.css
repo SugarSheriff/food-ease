@@ -1,3 +1,7 @@
+:root {
+  --main-blue: #007bff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -80,5 +84,35 @@ header li {
 header a {
   color: #fff;
   text-decoration: none;
+}
+
+/*example recipe card*/
+.recipe-card {
+  position: relative;
+  left: 700px;
+  width: 600px;
+  height: 500px;
+  border: 2px solid grey;
+  border-radius: 15px;
+  font-size: 25px;
+}
+
+.card-title {
+  padding: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid grey;
+  background-color: var(--main-blue);
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+}
+
+.card-instrutions {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-ingredients {
+  padding: 20px;
+  text-align: center;
 }
 
