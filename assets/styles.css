@@ -23,7 +23,6 @@
     padding: 10px;
   }
   
-  /* Style the heading for saved recipes */
   h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -44,7 +43,6 @@
     margin-bottom: 10px;
   }
   
-  /* Style the ingredients and instructions */
   .recipe p {
     font-size: 16px;
     line-height: 1.6;
@@ -64,7 +62,6 @@
     cursor: pointer;
   }
 
-/* Style the header links */
 header ul {
   list-style: none;
   padding: 0;
