@@ -1,7 +1,7 @@
 # Food-Ease
 
 ## Description
-This application is used to find recipes for the user desired food or drink. The only drinks that this site works with is cocktails and not any other drinks
+This application is used to find recipes for the user desired food or drink. The only drinks that this site works with is cocktails and not any other drinks.
 
 .....add link here!!!!
 
