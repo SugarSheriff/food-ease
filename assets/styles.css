@@ -3,21 +3,22 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  html {
-    background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
-    background-size:cover ;
-  }
+html {
+  background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
 
-  .search-area-background {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+.search-area-background {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  /*header {
+/*header {
     background-color: #007bff;
     color: #fff;
     padding: 10px;
@@ -36,44 +37,44 @@
   font-family: 'Dancing Script', cursive;
 }
 
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 32px;
-  }
-  
-    .recipe {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .recipe h2 {
-    color: #007bff;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .recipe p {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  .recipe + .recipe {
-    margin-top: 20px;
-  }
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
 
-  /* Hide the recipe content by default */
-  .recipe-content {
-    display: none;
-  }
-  
-  /* Add a pointer cursor to show that the recipe is clickable */
-  .recipe-title {
-    cursor: pointer;
-  }
+.recipe {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.recipe h2 {
+  color: #007bff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recipe p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.recipe+.recipe {
+  margin-top: 20px;
+}
+
+/* Hide the recipe content by default */
+.recipe-content {
+  display: none;
+}
+
+/* Add a pointer cursor to show that the recipe is clickable */
+.recipe-title {
+  cursor: pointer;
+}
 
 header ul {
   list-style: none;
@@ -82,8 +83,8 @@ header ul {
   display: flex;
   justify-content: center;
 }
-*/
 
+*/
 /*
 header li {
   margin: 0 10px;
@@ -130,6 +131,7 @@ header a {
   background-color: #f5f5f5;
 }
 
+
 .tabs {
   display: flex;
   justify-content: center;
@@ -163,18 +165,20 @@ header a {
 .tab-content.active {
   display: block;
 }
-.card-footer-item{
+
+.card-footer-item {
   background-color: green;
   color: #f5f5f5;
 }
 
 @media screen and (max-width: 1023px) {
+
   /* CSS rules for screens with a maximum width of 768px and below */
-  h1{
+  h1 {
     text-align: center;
   }
 
-  #burger{
+  #burger {
     margin-left: 47%;
   }
 }
