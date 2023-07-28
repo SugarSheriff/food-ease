@@ -13,8 +13,8 @@
     background-size:cover ;
   }
 
-  #search-area{
-    background-color: #99582a9a;
+  .search-area-background {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   /*header {
