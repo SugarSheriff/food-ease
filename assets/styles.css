@@ -11,7 +11,7 @@
 html {
   background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 .search-area-background {
@@ -98,6 +98,7 @@ header a {
 */
 
 /*example recipe card*/
+/*
 .recipe-card {
   position: relative;
   left: 700px;
@@ -130,6 +131,7 @@ header a {
   text-align: center;
   background-color: #f5f5f5;
 }
+*/
 
 
 .tabs {
@@ -165,12 +167,12 @@ header a {
 .tab-content.active {
   display: block;
 }
-
+/*
 .card-footer-item {
   background-color: green;
   color: #f5f5f5;
 }
-
+*/
 @media screen and (max-width: 1023px) {
 
   /* CSS rules for screens with a maximum width of 768px and below */
