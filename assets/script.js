@@ -9,7 +9,7 @@ function displayFoodResults(item){
   console.log(item);
   window.location.href = 'results.html';// switch to results page
   var data = JSON.parse(localStorage.getItem(`${item}Result`));//use template literal to parse out localstorage based on firstword
-  console.log(data);//log for testing
+  console.log(localStorage.getItem(`${item}Result`));//log for testing
 }
 
 function saveItemToSavedRecipes (event){ // Event that when save is clicked on a generated recipe it saves to localstorage then brings you to the saved recipe page
@@ -49,13 +49,15 @@ function foodButton(e){
 //API call for food commented out so that we dont use api calls while working out rest of page
   e.preventDefault();
   var query = searchBar.val();
+  var url = 'https://api.api-ninjas.com/v1/recipe?query=' + query;
 
   $.ajax({
     method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
+    url: url,
     headers: { 'X-Api-Key': '09nNnsjpkRmZ89Iq9Ihe7g==AjT05Ms9KWvG9vkG'},
     contentType: 'application/json',
     success: function(result) {
+      localStorage.setItem('foodResult', "");
       localStorage.setItem('foodResult', JSON.stringify(result));
     },
     error: function ajaxError(jqXHR) {
@@ -72,6 +74,7 @@ function foodButton(e){
 function drinkButton(e){
     e.preventDefault();
     var name = searchBar.val();
+    var url = 'https://api.api-ninjas.com/v1/cocktail?name=' + name;
 
     $.ajax({
         method: 'GET',
@@ -79,6 +82,7 @@ function drinkButton(e){
         headers: { 'X-Api-Key': '09nNnsjpkRmZ89Iq9Ihe7g==AjT05Ms9KWvG9vkG'},
         contentType: 'application/json',
         success: function(result) { 
+          localStorage.setItem('drinkResult', "");
           localStorage.setItem('drinkResult', JSON.stringify(result));
         },
         error: function ajaxError(jqXHR) {
