@@ -37,6 +37,10 @@
   align-content: center;
   justify-content: center;
 }
+/* below is the class for the navbar title */
+.is-size-1 {
+  font-family: 'Dancing Script', cursive;
+}
 
   h1 {
     text-align: center;
