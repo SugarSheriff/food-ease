@@ -55,6 +55,10 @@
                 </div>
             </div>
         </div>
+
+               <div class="clear-button-container">
+            <button class="button is-danger" id="clearButton">Clear Saved Recipes</button>
+        </div>
         <!--more saved recipes here-->
     </div>
 
@@ -76,6 +80,15 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.classList.add("active");
         }
+
+        // Add event listener to clear button
+        const clearButton = document.getElementById("clearButton");
+        clearButton.addEventListener("click", function () {
+            // Clear saved recipes from local storage
+            localStorage.removeItem("savedRecipes");
+            // Reload the page to reflect the changes
+            window.location.reload();
+        });
     </script>
 </body>
 </html>
