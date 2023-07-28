@@ -13,6 +13,10 @@
     background-size:cover ;
   }
 
+  #search-area{
+    background-color: #99582a9a;
+  }
+
   /*header {
     background-color: #007bff;
     color: #fff;
@@ -171,6 +175,6 @@ header a {
   }
 
   #burger{
-    margin-left: 50%;
+    margin-left: 47%;
   }
 }
