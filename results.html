@@ -8,37 +8,47 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
-    <header>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="savedrecipes.html">Saved Recipes</a></li>
-        </ul>
-    </header>
-
-    <div class="alt-search column is-one-third">
-        <div class="field">
-            <label class="label is-large" id="test">Search Again?</label>
-            <div>
-              <input id="alt-search" class="input is-normal" type="text" placeholder="Search">
-            </div>
+  <header>
+    <nav class="navbar is-info">
+      <h1 class="is-size-1">Food-Ease</h1>
+      <a class="navbar-burger is-vcentered" id="burger">
+          <span></span>
+          <span></span>
+      </a>
+      <div class="navbar-menu" id="nav-links">
+          <div class="navbar-end">
+              <a class="navbar-item" href="index.html">Home</a>
+              <a class="navbar-item" href="savedrecipes.html">Saved Recipes</a>
           </div>
-        <div class="media-content">
-            <div class="field is-grouped">
-                <p class="control">
-                  <button id="altSearchBtn" class="button is-info">
-                    Submit
-                  </button>
-                </p>
-            </div>
-          </div>
-    </div>
-
-            <div class="recipe-card">
+      </div>
+  </nav>
+  </header>
+  </div>
+  <div id="displayResult">
+    <div class="recipe-card">
             <h1 class="card-title">Bloody Mary</h1>
-              <p class="card-instrutions">"Stirring gently, pour all ingredients into highball glass. Garnish."</p>
-              <p class="card-ingredients">"4.5 cl (3 parts) vodka" "9 cl (6 parts) Tomato juice" "1.5 cl (1 part) lemon juice" "2 to 3 dashes of Worcestershire Sauce" "Tabasco sauce" "Celery salt" "Black pepper"
-              ​</p>
-            </div>
+            <p class="card-instrutions">"Stirring gently, pour all ingredients into highball glass. Garnish."</p>
+            <p class="card-ingredients">"4.5 cl (3 parts) vodka" "9 cl (6 parts) Tomato juice" "1.5 cl (1 part) lemon juice" "2 to 3 dashes of Worcestershire Sauce" "Tabasco sauce" "Celery salt" "Black pepper"​</p>
+            <a href="#" class="card-footer-item saveBTN">Save</a>
+    </div>
+  </div>
+  <div class="alt-search column is-one-third" id="search-again">
+    <div class="field">
+        <label class="label is-large" id="search-againh1">Search Again?</label>
+        <div>
+          <input id="alt-search" class="input is-normal" type="text" placeholder="Search">
+        </div>
+      </div>
+    <div class="media-content">
+        <div class="field is-grouped">
+            <p class="control">
+              <button id="altSearchBtn" class="button is-info">
+                Submit
+              </button>
+            </p>
+        </div>
+      </div>
+  </div>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
 </body>
