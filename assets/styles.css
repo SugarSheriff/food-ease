@@ -11,7 +11,8 @@
 html {
   background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 100%;
+  max-height: auto;
 }
 
 .search-area-background {
@@ -84,7 +85,7 @@ header ul {
   justify-content: center;
 }
 
-*/
+
 /*
 header li {
   margin: 0 10px;
@@ -109,17 +110,12 @@ header a {
   font-size: 25px;
   background-color: #f5f5f5;
 }
-
+*/
 .card-title {
-  padding: 15px;
-  font-weight: bold;
-  border-bottom: 2px solid grey;
-  background-color: green;
-  border-radius: 15px 15px 0 0;
-  color: #fff;
-  margin-top: 2%;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 900;
 }
-
+/*
 .card-instrutions {
   padding: 20px;
   text-align: center;
