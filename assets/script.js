@@ -6,10 +6,18 @@ var displayResults = $('#displayResult');
 //this is the area to write any funcitons
 
 function displayFoodResults(item){
+
+  if(!(localStorage.getItem(`${item}Result`) === '[]'))
+  {
   console.log(item);
   window.location.href = 'results.html';// switch to results page
   var data = JSON.parse(localStorage.getItem(`${item}Result`));//use template literal to parse out localstorage based on firstword
   console.log(localStorage.getItem(`${item}Result`));//log for testing
+  }
+  else
+  {
+    $('#noResult').removeAttr('hidden');
+  }
 }
 
 function saveItemToSavedRecipes (event){ // Event that when save is clicked on a generated recipe it saves to localstorage then brings you to the saved recipe page

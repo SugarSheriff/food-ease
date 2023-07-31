@@ -179,6 +179,7 @@ header a {
   padding-bottom: 3%;
   font-size: 2em;
 }
+
 @media screen and (max-width: 1023px) {
 
   /* CSS rules for screens with a maximum width of 768px and below */
@@ -199,4 +200,11 @@ header a {
   html{
     background-repeat: repeat-y;
   }
+}
+
+#noResult{
+  text-align: center;
+  color: red;
+  background-color:rgba(0, 0, 0, 0.5);
+  padding-bottom: 1%;
 }
