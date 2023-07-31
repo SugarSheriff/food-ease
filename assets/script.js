@@ -116,3 +116,59 @@ $('#search-food').on('click',foodButton)
 $('#search-drink').on('click',drinkButton)
 displayResults.on('click', '.saveBTN', saveItemToSavedRecipes);
 })
+
+$(function() {
+  // Function to display saved recipes from local storage
+  function displaySavedRecipes() {
+    var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
+    var container = $('.container');
+    container.empty();
+
+    if (savedRecipes && savedRecipes.length > 0) {
+      savedRecipes.forEach(function(recipe, index) {
+        var recipeHTML = `
+          <div class="recipe">
+            <h2 class="recipe-title">${recipe.name}</h2>
+            <div class="recipe-content">
+              <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'ingredients${index}')">Ingredients</button>
+                <button class="tab-button" onclick="openTab(event, 'instructions${index}')">Instructions</button>
+              </div>
+              <div id="ingredients${index}" class="tab-content">
+                <p>${recipe.ingredients}</p>
+              </div>
+              <div id="instructions${index}" class="tab-content" style="display: none;">
+                <p>${recipe.instructions}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        container.append(recipeHTML);
+      });
+    } else {
+      // If no saved recipes found, display a message
+      container.append('<p>No saved recipes yet.</p>');
+    }
+  }
+
+  // Function to handle the "Clear Saved Recipes" button click
+  function clearSavedRecipes() {
+    localStorage.removeItem('savedRecipes');
+    displaySavedRecipes();
+  }
+
+  // Attach click event handler for the "Clear Saved Recipes" button
+  $('#clearButton').on('click', clearSavedRecipes);
+
+  // Function to handle tab functionality
+  function openTab(event, tabName) {
+    var tabContents = $('.tab-content');
+    var tabButtons = $('.tab-button');
+    
+    tabContents.hide();
+    tabButtons.removeClass('active');
+
+    $('#' + tabName).show();
+    $(event.target).addClass('active');
+  }
+});
