@@ -14,17 +14,19 @@ function displayFoodResults(item){
 
 function saveItemToSavedRecipes (event){ // Event that when save is clicked on a generated recipe it saves to localstorage then brings you to the saved recipe page
   var btnClicked = $(event.target);// get the button that was targeted
-  var parentDiv = btnClicked.parent('div'); //get parent div of target
+  var parentDiv = btnClicked.parent('footer').parent('div'); //get parent div of target
+  var cardContainer = parentDiv.children('.card-content');
+
   //get the text from all three items and save to variable
-  var recipeName = parentDiv.children('.card-title').text();
-  var recipeInstructions = parentDiv.children('.card-instrutions').text();
-  var recipeIngriedents = parentDiv.children('.card-ingredients').text();
+  var recipeName = cardContainer.children('.card-title').text();
+  var recipeInstructions = cardContainer.children('.card-instrutions').text();
+  var recipeIngriedents = cardContainer.children('.card-ingredients').text();
 
   //create a new object with text of the div it was pulled from
   var savedRecipe = {
     name: recipeName,
     instructions: recipeInstructions,
-    ingriedents: recipeIngriedents
+    ingredients: recipeIngriedents
   };
 
   if (localStorage.getItem('savedRecipes') === null)// if this is the first time a recipe is being saved in a browser or a clear has happened run this
@@ -115,42 +117,43 @@ $(document).ready(function() {
 $('#search-food').on('click',foodButton)
 $('#search-drink').on('click',drinkButton)
 displayResults.on('click', '.saveBTN', saveItemToSavedRecipes);
-})
+displaySavedRecipes();
 
-$(function() {
+
   // Function to display saved recipes from local storage
   function displaySavedRecipes() {
     var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
-    var container = $('.container');
+    var container = $('#recipeDisplay');
     container.empty();
 
     if (savedRecipes && savedRecipes.length > 0) {
-      savedRecipes.forEach(function(recipe, index) {
-        var recipeHTML = `
-          <div class="recipe">
-            <h2 class="recipe-title">${recipe.name}</h2>
-            <div class="recipe-content">
-              <div class="tabs">
-                <button class="tab-button active" onclick="openTab(event, 'ingredients${index}')">Ingredients</button>
-                <button class="tab-button" onclick="openTab(event, 'instructions${index}')">Instructions</button>
-              </div>
-              <div id="ingredients${index}" class="tab-content">
-                <p>${recipe.ingredients}</p>
-              </div>
-              <div id="instructions${index}" class="tab-content" style="display: none;">
-                <p>${recipe.instructions}</p>
+        savedRecipes.forEach(function(recipe, index) {
+          var recipeHTML = `
+            <div class="recipe mt-5">
+              <h2 class="recipe-title">${recipe.name}</h2>
+              <div class="recipe-content">
+                <div class="tabs">
+                  <button class="tab-button active" onclick="openTab(event, 'ingredients${index}')">Ingredients</button>
+                  <button class="tab-button" onclick="openTab(event, 'instructions${index}')">Instructions</button>
+                </div>
+                <div id="ingredients${index}" class="tab-content">
+                  <p>${recipe.ingredients}</p>
+                </div>
+                <div id="instructions${index}" class="tab-content" style="display: none;">
+                  <p>${recipe.instructions}</p>
+                </div>
               </div>
             </div>
-          </div>
-        `;
-        container.append(recipeHTML);
+          `;
+          container.append(recipeHTML);
       });
-    } else {
+    } 
+    else {
       // If no saved recipes found, display a message
       container.append('<p>No saved recipes yet.</p>');
     }
-  }
 
+  }
   // Function to handle the "Clear Saved Recipes" button click
   function clearSavedRecipes() {
     localStorage.removeItem('savedRecipes');
@@ -171,4 +174,32 @@ $(function() {
     $('#' + tabName).show();
     $(event.target).addClass('active');
   }
+
+});
+
+
+//Outside of jquery so that onclick html attribute can be used
+function openTab(evt, tabName) {
+
+  const tabContents = document.getElementsByClassName("tab-content");
+  for (let i = 0; i < tabContents.length; i++) {
+      tabContents[i].style.display = "none";
+  }
+
+  const tabButtons = document.getElementsByClassName("tab-button");
+  for (let i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].classList.remove("active");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+
+// Add event listener to clear button
+const clearButton = document.getElementById("clearButton");
+clearButton.addEventListener("click", function () {
+  // Clear saved recipes from local storage
+  localStorage.removeItem("savedRecipes");
+  // Reload the page to reflect the changes
+  window.location.reload();
 });

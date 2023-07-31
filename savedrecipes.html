@@ -23,7 +23,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" id="recipeDisplay">
         <div class="recipe">
             <h2 class="recipe-title">Recipe 1</h2>
             <div class="recipe-content">
@@ -39,57 +39,13 @@
                 </div>
             </div>
         </div>
-        
-        <div class="recipe">
-            <h2 class="recipe-title">Recipe 2</h2>
-            <div class="recipe-content">
-                <div class="tabs">
-                    <button class="tab-button active" onclick="openTab(event, 'ingredients2')">Ingredients</button>
-                    <button class="tab-button" onclick="openTab(event, 'instructions2')">Instructions</button>
-                </div>
-                <div id="ingredients2" class="tab-content">
-                    <p>Ingredients for Recipe 2: abc</p>
-                </div>
-                <div id="instructions2" class="tab-content" style="display: none;">
-                    <p>Instructions for Recipe 2: xyz</p>
-                </div>
-            </div>
-        </div>
-
-               <div class="clear-button-container">
-            <button class="button is-danger" id="clearButton">Clear Saved Recipes</button>
-        </div>
         <!--more saved recipes here-->
     </div>
-
+    <div class="clear-button-container">
+        <button class="button is-danger" id="clearButton">Clear Saved Recipes</button>
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-    <script>
-        function openTab(evt, tabName) {
-
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].style.display = "none";
-            }
-
-            const tabButtons = document.getElementsByClassName("tab-button");
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove("active");
-            }
-
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.classList.add("active");
-        }
-
-        // Add event listener to clear button
-        const clearButton = document.getElementById("clearButton");
-        clearButton.addEventListener("click", function () {
-            // Clear saved recipes from local storage
-            localStorage.removeItem("savedRecipes");
-            // Reload the page to reflect the changes
-            window.location.reload();
-        });
-    </script>
 </body>
 </html>
