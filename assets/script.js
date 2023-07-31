@@ -10,6 +10,7 @@ function displayFoodResults(item){
   if(!(localStorage.getItem(`${item}Result`) === '[]'))
   {
   console.log(item);
+  localStorage.setItem('itemType', item);
   window.location.href = 'results.html';// switch to results page
   var data = JSON.parse(localStorage.getItem(`${item}Result`));//use template literal to parse out localstorage based on firstword
   console.log(localStorage.getItem(`${item}Result`));//log for testing
