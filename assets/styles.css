@@ -54,7 +54,7 @@ h1 {
 .recipe h2 {
   color: #007bff;
   font-size: 24px;
-  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .recipe p {
@@ -171,7 +171,7 @@ header a {
 
 #noRecipes{
   text-align: center;
-  color: red;
+  color: black;
   background-color: white;
   margin-top: 3%;
   margin-bottom: 3%;
