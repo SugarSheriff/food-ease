@@ -150,7 +150,7 @@ displaySavedRecipes();
     } 
     else {
       // If no saved recipes found, display a message
-      container.append('<p>No saved recipes yet.</p>');
+      container.append('<p id="noRecipes">No saved recipes yet.</p>');
     }
 
   }

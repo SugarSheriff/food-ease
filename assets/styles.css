@@ -168,6 +168,17 @@ header a {
   color: #f5f5f5;
 }
 */
+
+#noRecipes{
+  text-align: center;
+  color: red;
+  background-color: white;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding-top:3%;
+  padding-bottom: 3%;
+  font-size: 2em;
+}
 @media screen and (max-width: 1023px) {
 
   /* CSS rules for screens with a maximum width of 768px and below */
@@ -177,5 +188,15 @@ header a {
 
   #burger {
     margin-left: 47%;
+  }
+
+  html{
+    background-repeat: repeat-y;
+  }
+}
+
+@media screen and (min-height:1064px) {
+  html{
+    background-repeat: repeat-y;
   }
 }
