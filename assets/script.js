@@ -26,15 +26,14 @@ function displayFoodResults(){ //functions to display recipes to HTML
         </h1>`}
         //displays recipe instructions and ingredients for both food and drinks pages
       var displayRecipeHTML = `
-      <div class="container mt-5" id="displayResult">
-      <div class="card recipe-card"> 
+      <div class="card recipe-card mt-5">
         <div class="card-content"> `+ titleName +`
           <p class="subtitle card-instrutions">${recipe.instructions}</p> 
           <p class="card-ingredients">${recipe.ingredients}</p>
         </div>
         <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-black saveBTN">Save</a>
-          <a href="index.html" class="card-footer-item has-text-black newSearchBTN">New Search</a>
+          <a class="card-footer-item has-text-black saveBTN">Save</a>
+          <a class="card-footer-item has-text-black removeBTN">Remove</a>
         </footer>
       `;
       resultsContainer.append(displayRecipeHTML);
@@ -161,15 +160,23 @@ $(document).ready(function() {
   });
 });
 
+//Function to remove a recipe from the results page when displayed
+function removeRecipeFromList(e){ 
+  var btnClicked = $(e.target);
+  var parentDiv = btnClicked.parent('footer').parent('div');//getting which div was targeted
+  parentDiv.remove();//Removing that div
+}
+
 //This is the area for events
 $('#search-food').on('click',foodButton)
 $('#search-drink').on('click',drinkButton)
 displayFoodResults();
 displayResults.on('click', '.saveBTN', saveItemToSavedRecipes);
+displayResults.on('click', '.removeBTN', removeRecipeFromList);
 displaySavedRecipes();
 
 
-  // Function to display saved recipes from local storage
+  //Function to display saved recipes from local storage
   function displaySavedRecipes() {
     var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
     var container = $('#recipeDisplay');
@@ -178,20 +185,13 @@ displaySavedRecipes();
     if (savedRecipes && savedRecipes.length > 0) {
         savedRecipes.forEach(function(recipe, index) {
           var recipeHTML = `
-          
             <div class="recipe mt-5">
               <h2 class="recipe-title">${recipe.name}</h2>
               <div class="recipe-content">
-                <div class="tabs">
-                  <button class="tab-button active" onclick="openTab(event, 'ingredients${index}')">Ingredients</button>
-                  <button class="tab-button" onclick="openTab(event, 'instructions${index}')">Instructions</button>
-                </div>
-                <div id="ingredients${index}" class="tab-content">
-                  <p>${recipe.ingredients}</p>
-                </div>
-                <div id="instructions${index}" class="tab-content" style="display: none;">
-                  <p>${recipe.instructions}</p>
-                </div>
+                <h3>Ingredients:</h3>
+                <p>${recipe.ingredients}</p>
+                <h3>Instructions:</h3>
+                <p>${recipe.instructions}</p>
               </div>
             </div>
           `;
@@ -199,7 +199,7 @@ displaySavedRecipes();
       });
     } 
     else {
-      // If no saved recipes found, display a message
+      //If no saved recipes found, display a message
       container.append('<p id="noRecipes">No saved recipes yet.</p>');
     }
 

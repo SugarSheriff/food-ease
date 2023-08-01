@@ -183,6 +183,11 @@ header a {
 
 @media screen and (max-width: 1023px) {
 
+  .recipe{
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
   /* CSS rules for screens with a maximum width of 768px and below */
   h1 {
     text-align: center;
@@ -199,7 +204,7 @@ header a {
   }
 }
 
-@media screen and (min-height:1064px) {
+@media screen and (min-height:1064px){
   html{
     background-repeat: repeat-y;
   }
@@ -210,4 +215,29 @@ header a {
   color: red;
   background-color:rgba(0, 0, 0, 0.5);
   padding-bottom: 1%;
+}
+
+/*CSS added for styling of ingredients/instructions drop down on saved recipes */
+.recipe-content {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.recipe-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.recipe-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.recipe-content .recipe-ingredients,
+.recipe-content .recipe-instructions {
+  margin-top: 20px; /* Add margin between ingredients and instructions */
 }

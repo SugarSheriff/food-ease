@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food-Ease</title>
+    <title>Food-Ease - Saved Recipes</title>
     <link rel="stylesheet" href="./assets/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
@@ -24,28 +24,15 @@
         </nav>
     </header>
     <div class="container" id="recipeDisplay">
-        <div class="recipe">
-            <h2 class="recipe-title">Recipe 1</h2>
-            <div class="recipe-content">
-                <div class="tabs">
-                    <button class="tab-button active" onclick="openTab(event, 'ingredients1')">Ingredients</button>
-                    <button class="tab-button" onclick="openTab(event, 'instructions1')">Instructions</button>
-                </div>
-                <div id="ingredients1" class="tab-content">
-                    <p>Ingredients for Recipe 1: abc</p>
-                </div>
-                <div id="instructions1" class="tab-content" style="display: none;">
-                    <p>Instructions for Recipe 1: xyz</p>
-                </div>
-            </div>
-        </div>
-        <!--more saved recipes here-->
+        <!-- Saved recipes will be displayed here -->
     </div>
     <div class="buttons is-centered">
         <button class="button is-rounded" id="clearButton">Clear Saved Recipes</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 </body>
 </html>
