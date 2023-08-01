@@ -11,8 +11,7 @@
 html {
   background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
   background-repeat: no-repeat;
-  max-width: 100%;
-  max-height: auto;
+  background-size:cover;
 }
 
 .search-area-background {
