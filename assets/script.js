@@ -167,7 +167,7 @@ displayResults.on('click', '.saveBTN', saveItemToSavedRecipes);
 displaySavedRecipes();
 
 
-  // Function to display saved recipes from local storage
+  //Function to display saved recipes from local storage
   function displaySavedRecipes() {
     var savedRecipes = JSON.parse(localStorage.getItem('savedRecipes'));
     var container = $('#recipeDisplay');
@@ -176,20 +176,13 @@ displaySavedRecipes();
     if (savedRecipes && savedRecipes.length > 0) {
         savedRecipes.forEach(function(recipe, index) {
           var recipeHTML = `
-          
             <div class="recipe mt-5">
               <h2 class="recipe-title">${recipe.name}</h2>
               <div class="recipe-content">
-                <div class="tabs">
-                  <button class="tab-button active" onclick="openTab(event, 'ingredients${index}')">Ingredients</button>
-                  <button class="tab-button" onclick="openTab(event, 'instructions${index}')">Instructions</button>
-                </div>
-                <div id="ingredients${index}" class="tab-content">
-                  <p>${recipe.ingredients}</p>
-                </div>
-                <div id="instructions${index}" class="tab-content" style="display: none;">
-                  <p>${recipe.instructions}</p>
-                </div>
+                <h3>Ingredients:</h3>
+                <p>${recipe.ingredients}</p>
+                <h3>Instructions:</h3>
+                <p>${recipe.instructions}</p>
               </div>
             </div>
           `;
@@ -197,7 +190,7 @@ displaySavedRecipes();
       });
     } 
     else {
-      // If no saved recipes found, display a message
+      //If no saved recipes found, display a message
       container.append('<p id="noRecipes">No saved recipes yet.</p>');
     }
 
