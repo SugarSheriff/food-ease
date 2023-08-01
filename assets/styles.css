@@ -20,19 +20,6 @@ body{
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/*header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    font-size: 24px;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px;
-  }
 
 /* below is the class for the navbar title */
 .is-size-1 {
@@ -91,50 +78,10 @@ header ul {
   justify-content: center;
 }
 
-
-/*
-header li {
-  margin: 0 10px;
-}
-
-header a {
-  color: #fff;
-  text-decoration: none;
-}
-
-*/
-
-/*example recipe card*/
-/*
-.recipe-card {
-  position: relative;
-  left: 700px;
-  width: 600px;
-  height: 500px;
-  border: 2px solid grey;
-  border-radius: 15px;
-  font-size: 25px;
-  background-color: #f5f5f5;
-}
-*/
 .card-title {
   font-family: 'Dancing Script', cursive;
   font-weight: 900;
 }
-/*
-.card-instrutions {
-  padding: 20px;
-  text-align: center;
-  background-color: #f5f5f5;
-}
-
-.card-ingredients {
-  padding: 20px;
-  text-align: center;
-  background-color: #f5f5f5;
-}
-*/
-
 
 .tabs {
   display: flex;
@@ -169,12 +116,6 @@ header a {
 .tab-content.active {
   display: block;
 }
-/*
-.card-footer-item {
-  background-color: green;
-  color: #f5f5f5;
-}
-*/
 
 #noRecipes{
   text-align: center;
