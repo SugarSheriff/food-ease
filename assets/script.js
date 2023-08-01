@@ -100,7 +100,12 @@ function foodButton(e){
     }
   });
   setTimeout(function(){//using timeout to make sure and get data from api before the page is redirected
-    window.location.href = 'results.html';//redirect user to saved recipes
+    if (!(localStorage.getItem('foodResult') === '[]'))
+    {
+      window.location.href = 'results.html';
+  } else {
+    $('#noResult').removeAttr('hidden');
+  } //redirect user to saved recipes
   }, 1000);
 
   }
@@ -126,8 +131,14 @@ function drinkButton(e){
             console.error('Error: ', jqXHR.responseText);
         }
     });
-    setTimeout(function(){//using timeout to make sure and get data from api before the page is redirected
-      window.location.href = 'results.html';//redirect user to saved recipes
+    setTimeout(function(){
+      if (!(localStorage.getItem('drinkResult') === '[]'))
+      {
+        window.location.href = 'results.html';
+    } else {
+      $('#noResult').removeAttr('hidden');
+    }//using timeout to make sure and get data from api before the page is redirected
+      //redirect user to saved recipes
     }, 1000);
   
   }
