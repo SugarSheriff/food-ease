@@ -11,7 +11,8 @@
 html {
   background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 100%;
+  max-height: auto;
 }
 
 .search-area-background {
@@ -214,4 +215,29 @@ header a {
   color: red;
   background-color:rgba(0, 0, 0, 0.5);
   padding-bottom: 1%;
+}
+
+/*CSS added for styling of ingredients/instructions drop down on saved recipes */
+.recipe-content {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.recipe-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.recipe-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.recipe-content .recipe-ingredients,
+.recipe-content .recipe-instructions {
+  margin-top: 20px; /* Add margin between ingredients and instructions */
 }
