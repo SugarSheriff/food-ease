@@ -179,6 +179,7 @@ displaySavedRecipes();
           
             <div class="recipe mt-5">
               <h2 class="recipe-title">${recipe.name}</h2>
+              <span class="bulma-arrow-mixin">▼</span>
               <div class="recipe-content">
                 <div class="tabs">
                   <button class="tab-button active" onclick="openTab(event, 'ingredients${index}')">Ingredients</button>
