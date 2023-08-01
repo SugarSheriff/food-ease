@@ -3,32 +3,33 @@ $(function(){
 var searchBar = $('#main-search');
 var displayResults = $('#displayResult');
 
-//this is the area to write any funcitons
 
 
-  function displayFoodResults(){
+function displayFoodResults(){ //functions to display recipes to HTML
 
-  var foodData = JSON.parse(localStorage.getItem('foodResult'));
+  var foodData = JSON.parse(localStorage.getItem('foodResult')); 
 
   var drinkData = JSON.parse(localStorage.getItem('drinkResult'));
 
  var data;
  if (foodData && foodData.length > 0){data=foodData}
- else if (drinkData && drinkData.length > 0){data=drinkData}
+ else if (drinkData && drinkData.length > 0){data=drinkData} 
  
   var resultsContainer = $('#displayResult');
   resultsContainer.empty();
   if (data && data.length > 0) { 
-    data.forEach(function(recipe, index) {
+    // function to dynamically add the container and the styling to the HTML
+    data.forEach(function(recipe) {
       if (recipe.name){var titleName = `<h1 class="title has-text-weight-bold card-title">${recipe.name}
-      </h1>`} else { var titleName =
-        `<h1 class="title has-text-weight-bold card-title">${recipe.title}
+      </h1>`} else { var titleName = //displays recipe name and makes sure both food and drink pages create content
+        `<h1 class="title has-text-weight-bold card-title">${recipe.title} 
         </h1>`}
+        //displays recipe instructions and ingredients for both food and drinks pages
       var displayRecipeHTML = `
       <div class="container mt-5" id="displayResult">
-      <div class="card recipe-card">
+      <div class="card recipe-card"> 
         <div class="card-content"> `+ titleName +`
-          <p class="subtitle card-instrutions">${recipe.instructions}</p>
+          <p class="subtitle card-instrutions">${recipe.instructions}</p> 
           <p class="card-ingredients">${recipe.ingredients}</p>
         </div>
         <footer class="card-footer">
@@ -37,7 +38,8 @@ var displayResults = $('#displayResult');
         </footer>
       `;
       resultsContainer.append(displayRecipeHTML);
-    });} else {
+    });
+  } else {
       // If no saved recipes found, display a message
       resultsContainer.append('<p id="noRecipes"></p>');
   }
