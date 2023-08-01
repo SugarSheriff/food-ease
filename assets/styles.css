@@ -11,7 +11,8 @@
 html {
   background-image: url(/assets/Screenshot\ 2023-07-26\ at\ 9.29.58\ PM.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 100%;
+  max-height: auto;
 }
 
 .search-area-background {
@@ -52,9 +53,9 @@ h1 {
 }
 
 .recipe h2 {
-  color: #007bff;
+  font-family: 'Dancing Script', cursive;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .recipe p {
@@ -179,6 +180,7 @@ header a {
   padding-bottom: 3%;
   font-size: 2em;
 }
+
 @media screen and (max-width: 1023px) {
 
   /* CSS rules for screens with a maximum width of 768px and below */
@@ -191,7 +193,9 @@ header a {
   }
 
   html{
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    background-size: unset;
+    background-position-x: center;
   }
 }
 
@@ -199,4 +203,11 @@ header a {
   html{
     background-repeat: repeat-y;
   }
+}
+
+#noResult{
+  text-align: center;
+  color: red;
+  background-color:rgba(0, 0, 0, 0.5);
+  padding-bottom: 1%;
 }
