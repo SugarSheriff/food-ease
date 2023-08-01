@@ -183,6 +183,11 @@ header a {
 
 @media screen and (max-width: 1023px) {
 
+  .recipe{
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
   /* CSS rules for screens with a maximum width of 768px and below */
   h1 {
     text-align: center;
@@ -199,7 +204,7 @@ header a {
   }
 }
 
-@media screen and (min-height:1064px) {
+@media screen and (min-height:1064px){
   html{
     background-repeat: repeat-y;
   }
