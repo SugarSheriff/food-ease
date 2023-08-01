@@ -3,7 +3,7 @@
 ## Description
 This application is used to find recipes for the user desired food or drink. The only drinks that this site works with is cocktails and not any other drinks.
 
-.....add link here!!!!
+https://wowzowski.github.io/food-ease/savedrecipes.html
 
 ![landingpage](./assets/landingpage.PNG)
 
