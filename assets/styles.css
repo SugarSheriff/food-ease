@@ -55,6 +55,12 @@ h1 {
   font-family: 'Dancing Script', cursive;
   font-size: 24px;
   font-weight: bolder;
+  display: inline;
+}
+
+.bulma-arrow-mixin {
+  float: right;
+  margin: auto;
 }
 
 .recipe p {
