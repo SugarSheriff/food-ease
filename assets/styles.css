@@ -9,7 +9,7 @@
 }
 
 body{
-  background-image: url(/assets/backgroundimg.png);
+  background-image: url(./backgroundimg.png);
   background-repeat: no-repeat;
   background-size:cover;
   min-width: 100vw;
