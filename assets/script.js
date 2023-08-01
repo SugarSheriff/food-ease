@@ -5,19 +5,41 @@ var displayResults = $('#displayResult');
 
 //this is the area to write any funcitons
 
-function displayFoodResults(item){
 
-  if(!(localStorage.getItem(`${item}Result`) === '[]'))
-  {
-  console.log(item);
-  localStorage.setItem('itemType', item);
-  window.location.href = 'results.html';// switch to results page
-  var data = JSON.parse(localStorage.getItem(`${item}Result`));//use template literal to parse out localstorage based on firstword
-  console.log(localStorage.getItem(`${item}Result`));//log for testing
-  }
-  else
-  {
-    $('#noResult').removeAttr('hidden');
+  function displayFoodResults(){
+
+  var foodData = JSON.parse(localStorage.getItem('foodResult'));
+
+  var drinkData = JSON.parse(localStorage.getItem('drinkResult'));
+
+ var data;
+ if (foodData && foodData.length > 0){data=foodData}
+ else if (drinkData && drinkData.length > 0){data=drinkData}
+ 
+  var resultsContainer = $('#displayResult');
+  resultsContainer.empty();
+  if (data && data.length > 0) { 
+    data.forEach(function(recipe, index) {
+      if (recipe.name){var titleName = `<h1 class="title has-text-weight-bold card-title">${recipe.name}
+      </h1>`} else { var titleName =
+        `<h1 class="title has-text-weight-bold card-title">${recipe.title}
+        </h1>`}
+      var displayRecipeHTML = `
+      <div class="container mt-5" id="displayResult">
+      <div class="card recipe-card">
+        <div class="card-content"> `+ titleName +`
+          <p class="subtitle card-instrutions">${recipe.instructions}</p>
+          <p class="card-ingredients">${recipe.ingredients}</p>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item has-text-black saveBTN">Save</a>
+          <a href="index.html" class="card-footer-item has-text-black newSearchBTN">New Search</a>
+        </footer>
+      `;
+      resultsContainer.append(displayRecipeHTML);
+    });} else {
+      // If no saved recipes found, display a message
+      resultsContainer.append('<p id="noRecipes"></p>');
   }
 }
 
@@ -59,6 +81,8 @@ function saveItemToSavedRecipes (event){ // Event that when save is clicked on a
 function foodButton(e){
 //API call for food commented out so that we dont use api calls while working out rest of page
   e.preventDefault();
+  localStorage.removeItem('foodResult');
+  localStorage.removeItem('drinkResult');
   var query = searchBar.val();
   var url = 'https://api.api-ninjas.com/v1/recipe?query=' + query;
 
@@ -75,15 +99,17 @@ function foodButton(e){
         console.error('Error: ', jqXHR.responseText);
     }
   });
-  
   setTimeout(function(){//using timeout to make sure and get data from api before the page is redirected
-    displayFoodResults('food');
+    window.location.href = 'results.html';//redirect user to saved recipes
   }, 1000);
+
   }
 
 //drink button click functionality
 function drinkButton(e){
     e.preventDefault();
+    localStorage.removeItem('drinkResult');
+    localStorage.removeItem('foodResult');
     var name = searchBar.val();
     var url = 'https://api.api-ninjas.com/v1/cocktail?name=' + name;
 
@@ -100,10 +126,10 @@ function drinkButton(e){
             console.error('Error: ', jqXHR.responseText);
         }
     });
-
-   setTimeout(function(){//using timeout to make sure and get data from api before the page is redirected
-      displayFoodResults('drink');
+    setTimeout(function(){//using timeout to make sure and get data from api before the page is redirected
+      window.location.href = 'results.html';//redirect user to saved recipes
     }, 1000);
+  
   }
 
 
@@ -125,6 +151,7 @@ $(document).ready(function() {
 //This is the area for events
 $('#search-food').on('click',foodButton)
 $('#search-drink').on('click',drinkButton)
+displayFoodResults();
 displayResults.on('click', '.saveBTN', saveItemToSavedRecipes);
 displaySavedRecipes();
 
@@ -138,6 +165,7 @@ displaySavedRecipes();
     if (savedRecipes && savedRecipes.length > 0) {
         savedRecipes.forEach(function(recipe, index) {
           var recipeHTML = `
+          
             <div class="recipe mt-5">
               <h2 class="recipe-title">${recipe.name}</h2>
               <div class="recipe-content">
