@@ -185,9 +185,8 @@ displaySavedRecipes();
     if (savedRecipes && savedRecipes.length > 0) {
         savedRecipes.forEach(function(recipe, index) {
           var recipeHTML = `
-            <div class="recipe mt-5">
-              <h2 class="recipe-title">${recipe.name}</h2>
-              <span class="bulma-arrow-mixin">▼</span>
+            <div class="recipe mt-5" id="recipeContainer">
+              <h2 class="recipe-title">${recipe.name}<span class="bulma-arrow-mixin">▼</span></h2>
               <div class="recipe-content">
                 <h3>Ingredients:</h3>
                 <p>${recipe.ingredients}</p>
