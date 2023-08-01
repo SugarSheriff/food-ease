@@ -25,15 +25,14 @@ var displayResults = $('#displayResult');
         `<h1 class="title has-text-weight-bold card-title">${recipe.title}
         </h1>`}
       var displayRecipeHTML = `
-      <div class="container mt-5" id="displayResult">
-      <div class="card recipe-card">
+      <div class="card recipe-card mt-5">
         <div class="card-content"> `+ titleName +`
           <p class="subtitle card-instrutions">${recipe.instructions}</p>
           <p class="card-ingredients">${recipe.ingredients}</p>
         </div>
         <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-black saveBTN">Save</a>
-          <a href="index.html" class="card-footer-item has-text-black newSearchBTN">New Search</a>
+          <a class="card-footer-item has-text-black saveBTN">Save</a>
+          <a class="card-footer-item has-text-black removeBTN">Remove</a>
         </footer>
       `;
       resultsContainer.append(displayRecipeHTML);
@@ -159,11 +158,19 @@ $(document).ready(function() {
   });
 });
 
+//Function to remove a recipe from the results page when displayed
+function removeRecipeFromList(e){ 
+  var btnClicked = $(e.target);
+  var parentDiv = btnClicked.parent('footer').parent('div');//getting which div was targeted
+  parentDiv.remove();//Removing that div
+}
+
 //This is the area for events
 $('#search-food').on('click',foodButton)
 $('#search-drink').on('click',drinkButton)
 displayFoodResults();
 displayResults.on('click', '.saveBTN', saveItemToSavedRecipes);
+displayResults.on('click', '.removeBTN', removeRecipeFromList);
 displaySavedRecipes();
 
 
