@@ -158,10 +158,11 @@ $(document).ready(function() {
   });
 });
 
-function removeRecipeFromList(e){
+//Function to remove a recipe from the results page when displayed
+function removeRecipeFromList(e){ 
   var btnClicked = $(e.target);
-  var parentDiv = btnClicked.parent('footer').parent('div');
-  parentDiv.remove();
+  var parentDiv = btnClicked.parent('footer').parent('div');//getting which div was targeted
+  parentDiv.remove();//Removing that div
 }
 
 //This is the area for events
