@@ -31,8 +31,8 @@ var displayResults = $('#displayResult');
           <p class="card-ingredients">${recipe.ingredients}</p>
         </div>
         <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-black saveBTN">Save</a>
-          <a href="#" class="card-footer-item has-text-black removeBTN">Remove</a>
+          <a class="card-footer-item has-text-black saveBTN">Save</a>
+          <a class="card-footer-item has-text-black removeBTN">Remove</a>
         </footer>
       `;
       resultsContainer.append(displayRecipeHTML);
