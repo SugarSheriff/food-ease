@@ -1,7 +1,8 @@
 # Food-Ease
 
 ## Description
-This application is used to find recipes for the user's desired food or drink. Cocktails are the only drinks that this site will be able to display.
+This application is used to find recipes for the user's desired food or drink. 
+Cocktails are the only drinks that this site will be able to display.
 
 https://wowzowski.github.io/food-ease/index.html
 
